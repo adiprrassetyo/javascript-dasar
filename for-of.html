@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>For Of</title>
+  </head>
+  <body>
+    <script>
+      const names = ["Eko", "Kurniawan", "Khannedy"];
+      for (const name of names) {
+        document.writeln(`<p>${name}</p>`);
+      }
+
+      const fullName = "Eko Kurniawan Khannedy";
+      for (const character of fullName) {
+        document.writeln(`<p>${character}</p>`);
+      }
+
+      // const person = {
+      //     firstName: "Eko",
+      //     lastName: "Khannedy"
+      // };
+      // for(const name of person){
+      //     document.writeln(`<p>${name}</p>`);
+      // }
+      const buku = [
+        "Game of Thrones: A Song of Ice and Fire",
+        "Harry Potter and The Philosopher's Stone",
+        "Lord of The Rings: The Fellowship of The Ring",
+      ];
+
+      for (let x of buku) {
+        console.log(x);
+      }
+
+      for (const iterator of object) {
+      }
+      /*
+Output:
+Game of Thrones: A Song of Ice and Fire
+Harry Potter and The Philosopher's Stone
+Lord of The Rings: The Fellowship of The Ring
+*/
+
+      let angka = [1, 46, 75, 12, 89, 54, 101];
+      let ganjil = [];
+
+      // Tulis kode kalian di bawah ini
+      for (let i of angka) {
+        if (i % 2 == 1) {
+          ganjil.push(i);
+        }
+      }
+      console.log(ganjil);
+    </script>
+  </body>
+</html>
