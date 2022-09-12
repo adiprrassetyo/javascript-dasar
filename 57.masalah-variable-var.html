@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Masalah Variable var</title>
-</head>
-<body>
-<script>
+  </head>
+  <body>
+    <script>
+      // global scope
+      var i = 20;
 
-    // global scope
-    var i = 20;
-
-    for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < 10; i++) {
         // local scope
         console.info(`Local ${i}`);
-    }
+      }
 
-    console.info(`Global ${i}`);
-
-</script>
-</body>
+      console.info(`Global ${i}`);
+    </script>
+  </body>
 </html>

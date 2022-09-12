@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Destructuring</title>
-</head>
-<body>
-<script>
-
-    {
+  </head>
+  <body>
+    <script>
+      {
+        //destructuring terhadap array
         const names = ["Eko", "Kurniawan", "Khannedy", "Budi", "Joko"];
         let [firstName, middleName, lastName, ...others] = names;
 
@@ -15,92 +15,107 @@
         console.info(middleName);
         console.info(lastName);
         console.info(others);
-    }
+      }
 
-    {
+      {
+        // destructuring terhadap object
         const person = {
-            firstName: "Eko",
-            lastName: "Khannedy",
-            address: {
-                street: "Jalan Belum Ada",
-                city: "Jakarta",
-                country: "Indonesia"
-            },
-            hobby: "Game",
-            channel: "Programmer Zaman Now"
+          firstName: "Eko",
+          lastName: "Khannedy",
+          address: {
+            street: "Jalan Belum Ada",
+            city: "Jakarta",
+            country: "Indonesia",
+          },
+          hobby: "Game",
+          channel: "Programmer Zaman Now",
         };
 
-        let {firstName, lastName, address: {city, street, country}, ...others} = person;
+        let {
+          firstName,
+          lastName,
+          address: { city, street, country },
+          address,
+          ...others
+        } = person;
         console.info(firstName);
         console.info(lastName);
+        console.info(address);
         console.info(city);
         console.info(street);
         console.info(country);
         console.info(others);
-    }
+      }
 
-    {
-        function displayPerson({firstName, middleName, lastName}) {
-            console.info(firstName);
-            console.info(middleName);
-            console.info(lastName);
+      {
+        // destructuring terhadap parameter
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.info(firstName);
+          console.info(middleName);
+          console.info(lastName);
         }
 
         const person = {
-            firstName: "Eko",
-            middleName: "Kurniawan",
-            lastName: "Khannedy",
+          firstName: "Eko",
+          middleName: "Kurniawan",
+          lastName: "Khannedy",
         };
 
         displayPerson(person);
-    }
+      }
 
-    {
+      {
+        // destructuring terhadap parameter
         function sum([first, second]) {
-            return first + second;
+          return first + second;
         }
 
         console.info(sum([1, 1]));
         console.info(sum([10, 10]));
-    }
+      }
 
-    {
+      {
+        // destructuring default value array
         const names = ["Eko", "Budi", "Joko"];
-        const [firstName, middleName = "Kurniawan", lastName = "Khannedy"] = names;
+        //ditambah di bawah langsung karena tidak ada value sebelumnya
+        const [firstName, middleName = "Kurniawan", lastName = "Khannedy"] =
+          names;
 
         console.info(firstName);
         console.info(middleName);
         console.info(lastName);
-    }
+      }
 
-    {
+      {
+        // destructuring default value object
         const person = {
-            firstName: "Eko",
-            middleName: "Budi",
-            lastName: "Khannedy"
+          firstName: "Eko",
+          middleName: "Budi",
+          lastName: "Khannedy",
         };
 
-        let {firstName, middleName = "Kurniawan", lastName} = person;
+        let { firstName, middleName = "Kurniawan", lastName } = person;
         console.info(firstName);
         console.info(middleName);
         console.info(lastName);
-    }
+      }
 
-    {
+      {
         const person = {
-            firstName: "Eko",
-            middleName: "Budi",
-            lastName: "Khannedy"
+          firstName: "Eko",
+          middleName: "Budi",
+          lastName: "Khannedy",
         };
 
-        let {firstName: namaDepan,
-            middleName: namaTengah = "Kurniawan",
-            lastName: namaBelakang} = person;
+        let {
+          firstName: namaDepan,
+          middleName: namaTengah = "Kurniawan",
+          lastName: namaBelakang,
+        } = person;
         console.info(namaDepan);
         console.info(namaTengah);
         console.info(namaBelakang);
-    }
-
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
